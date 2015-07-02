@@ -1,6 +1,5 @@
 def get_gcd(x, y):
     """Calculate the greatest common divisor of two numbers."""
-    print('in get_gcd; x, y:', x, y)
     if y > x:
         x, y = y, x
 
@@ -13,5 +12,14 @@ def get_gcd(x, y):
     return result
         
 
-gcd = get_gcd(100, 75)
-print(gcd)
+# Test the function.
+import unittest
+
+class TestEuclid(unittest.TestCase):
+    def test(self):
+        self.assertEqual(get_gcd(100, 75), 25)
+        self.assertEqual(get_gcd(75, 100), 25)
+        self.assertEqual(get_gcd(544, 119), 17)
+        self.assertEqual(get_gcd(119, 544), 17)
+
+unittest.main()
